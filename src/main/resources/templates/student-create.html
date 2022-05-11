@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create student</title>
+</head>
+<body>
+<form action="#" th:action="@{/student-create}" th:object="${student}" method="post">
+    <label for="fullName">Full name</label>
+    <input type="text" field="*{fullName}" name="fullName" id="fullName" placeholder="Full Name" required>
+    <br/>
+    <label for="rank">Rank</label>
+    <input type="text" field="*{rank}" name="rank" id="rank" placeholder="Rank" required>
+    <br/>
+    <label for="birthday">Birthday</label>
+    <input type="date" field="*{birthday}" name="birthday" id="birthday" placeholder="Birthday" required>
+    <br/>
+    <label for="yearAdm">Year of Admission</label>
+    <input type="date" field="*{year_adm}" name="yearAdm" id="yearAdm" placeholder="Year of Admission" required>
+    <br/>
+    <input type="submit" value="Create student">
+</form>
+<form action="#">
+
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+<div th:switch="${students}">
+    <h2 th:case="null">No students found!</h2>
+    <div th:case="*">
+        <h2>Ученики</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>ФИО</th>
+                <th>Класс</th>
+                <th>День рождения</th>
+                <th>Год поступления</th>
+                <th>Корректных выражений</th>
+                <th>Некорректных выражений</th>
+                <th>Правильных вычислений</th>
+                <th>Неправильных вычислений</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.fullName}"></td>
+                <td th:text="${student.rank}"></td>
+                <td th:text="${student.birthday}"></td>
+                <td th:text="${student.yearAdm}"></td>
+                <td th:text="${student.correctAnswers}"></td>
+                <td th:text="${student.incorrectAnswers}"></td>
+                <td th:text="${student.validAnswer}"></td>
+                <td th:text="${student.invalidAnswers}"></td>
+
+                <td><a th:href="@{student-update/{id}(id=${student.id})}">Edit</a></td>
+                <td><a th:href="@{student-delete/{id}(id=${student.id})}">Delete</a></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/student-create">Create student</a></p>
+</div>
+</body>
+</html>

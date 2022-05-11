@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update student</title>
+</head>
+<body>
+<form action="#" th:action="@{/student-calc}" th:object="${student}" method="post">
+    <br/>
+    <label for="fullName">Введите ваше ФИО:</label><br/>
+    <input type="text" th:field="*{fullName}" id="fullName" placeholder="ФИО">
+    <br/><br/>
+    <label for="qwe">Введите проверяемое выражение:</label><br/>
+    <textarea name="textArea" id="qwe" placeholder="Введите выражение тут:" maxlength="255"></textarea>
+    <br/><br/>
+    <input type="submit" value="Check">
+</form>
+</body>
+</html>
