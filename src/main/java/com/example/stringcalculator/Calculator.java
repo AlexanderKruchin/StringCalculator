@@ -14,7 +14,7 @@ public class Calculator {
 
         String str = reader.readLine();
 
-        String str2 = str.replaceAll("[~,%#$\\s.?\\]!\\[<`>^&{}@№'\"|;:_a-zA-Zа-яёА-ЯЁ]","");//удаляем всем буквы, лишние символы и пробелы
+        String str2 = str.replaceAll("[~,%#$\\s.?\\]!\\[<`>^&{}@№'\"|;:_a-zA-Zа-яёА-ЯЁ]","");
 
         String[] sub = str2.split("=");
         String quest = sub[0];
